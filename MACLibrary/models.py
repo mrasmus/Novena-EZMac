@@ -50,16 +50,6 @@ class Address(models.Model):
                           unique=True)
     serial = models.AutoField(primary_key=True)
 
-    #def save(self, *args, **kwargs):
-    #    if not self.serial:
-    #        self.status = Address.OPEN
-    #    super(Address, self).save(*args, **kwargs)
-
-
-    def confirm_assignment(self):
-        self.status = Address.ASSIGNED
-
-
     def __unicode__(self):
         return self.mac + ' | ' + str(self.serial) + ('' if self.status == Address.ASSIGNED else '(' + self.status + ')')
 
