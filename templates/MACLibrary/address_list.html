@@ -10,9 +10,9 @@
 </ul>
 
 <h1>Addresses</h1>
-<table border="1"><tr><td>Serial</td><td>MAC</td><td>Status</td></tr>
+<table border="1"><tr><td>Serial</td><td>MAC</td><td>Status</td><td>Last Modified</td></tr>
 {% for address in object_list %}
-    <tr><td>{{ address.serial }}</td><td>{{ address.mac }}</td><td>{{ address.status }}</td></tr>
+    <tr><td>{{ address.serial }}</td><td>{{ address.mac }}</td><td>{{ address.status }}</td><td>{{ address.modified }}</td></tr>
 {% empty %}
     <tr><td>No addresses.</td></tr>
 {% endfor %}

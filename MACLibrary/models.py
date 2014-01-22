@@ -40,6 +40,7 @@ class Address(models.Model):
         (PENDING, 'Pending'),
         (ASSIGNED, 'Assigned'),
     )
+    modified = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=16,
                               choices=STATUS_CHOICES,
                               default=OPEN,
