@@ -32,15 +32,15 @@ class MACAddressField(models.Field):
 
 
 class Address(models.Model):
-    OPEN = 'OPN'
-    PENDING = 'PND'
-    ASSIGNED = 'ASS'
+    OPEN = 'Open'
+    PENDING = 'Pending'
+    ASSIGNED = 'Assigned'
     STATUS_CHOICES = (
         (OPEN, 'Open'),
         (PENDING, 'Pending'),
         (ASSIGNED, 'Assigned'),
     )
-    status = models.CharField(max_length=3,
+    status = models.CharField(max_length=16,
                               choices=STATUS_CHOICES,
                               default=OPEN,
                               blank=False,
