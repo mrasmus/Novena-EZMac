@@ -1,0 +1,19 @@
+<p><a href="/freepending/">Free Pending addresses.</a></p>
+<p>Endpoints:</p>
+<ul>
+    <li>/getnew/ - Allocate new MAC/Serial pair, mark it as pending</li>
+    <li>/freepending/ - Free all Pending addresses (mark as Open)</li>
+    <li>/find/by-serial/[serial-number]/ - Look up by serial number</li>
+    <li>/find/by-mac/[mac-address]/ - Look up by MAC Address</li>
+    <li>/assign/by-serial/[serial-number]/ - Mark as assigned (by serial)</li>
+    <li>/assign/by-mac/[mac-address]/ - Mark as assigned (by mac)</li>
+</ul>
+
+<h1>Addresses</h1>
+<table border="1"><tr><td>Serial</td><td>MAC</td><td>Status</td></tr>
+{% for address in object_list %}
+    <tr><td>{{ address.serial }}</td><td>{{ address.mac }}</td><td>{{ address.status }}</td></tr>
+{% empty %}
+    <tr><td>No addresses.</td></tr>
+{% endfor %}
+</table>

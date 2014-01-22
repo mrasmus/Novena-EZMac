@@ -1,0 +1,8 @@
+.env
+env
+tmp
+*.py[co]
+db.sqlite
+.idea
+.DS_Store
+local_settings.py
